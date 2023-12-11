@@ -18,3 +18,9 @@ jobs:
 
     - name: Check files
       run: ls ./package
+
+    - name: Upload DEB package
+      uses: actions/upload-artifact@v2
+      with:
+        name: deb-package
+        path: ../package/*.deb
