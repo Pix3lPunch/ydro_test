@@ -1,5 +1,9 @@
-# ydr
+# ydro_test
 
-Переменные среды в /build/.env
+[![Build DEB Package](https://github.com/Pix3lPunch/ydro_test/actions/workflows/build_deb.yml/badge.svg)](https://github.com/Pix3lPunch/ydro_test/actions/workflows/build_deb.yml)
 
-Запуск sudo docker-compose up
+Переменные среды настройки сборки пакета для разработчиков размещены в '/builder/.env'
+
+Скрипт для сборки пакета находится в '/builder/scripts/build_deb.sh'
+
+Модуль для примера размещен в директории 'src'
