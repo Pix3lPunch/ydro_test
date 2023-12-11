@@ -26,7 +26,6 @@ dh_make -s -n -c "$PACKAGE_LICENSE" -p "${PACKAGE_NAME}_${PACKAGE_VERSION}" -e "
 
 #Fill debian/control
 PACKAGE_DESCRIPTION=$(python3 setup.py --description)
-BUILD_DEPENDENCIES="python3 (>=${PYTHON_VER}), debhelper (>=7), dh-python, python3-setuptools"
 
 sed -i "s/Description: .*/Description: $PACKAGE_DESCRIPTION/g" "$SRC_PATH/debian/control"
 sed -i "s/Section: .*/Section: python/g" "$SRC_PATH/debian/control"
