@@ -1,2 +1,5 @@
 .pybuild
 *.egg-info
+debian
+package
+misc
