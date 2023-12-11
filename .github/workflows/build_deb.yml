@@ -21,9 +21,11 @@ jobs:
         package_path=$(find ./package -name '*.deb')
         echo "Package Path: $package_path"
         echo "package=$package_path" >> $GITHUB_ENV
+        package_name=$(basename $package_path .deb)
+        echo "package_name=$package_name" >> $GITHUB_ENV
 
     - name: Upload DEB package
       uses: actions/upload-artifact@v2
       with:
-        name: deb-package
+        name: ${{ env.package_name }}
         path: ${{ env.package }}
