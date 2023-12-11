@@ -17,4 +17,4 @@ jobs:
         docker-compose up
 
     - name: Check files
-      run: ls
+      run: ls ./package
