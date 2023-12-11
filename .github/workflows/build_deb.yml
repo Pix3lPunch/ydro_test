@@ -17,7 +17,9 @@ jobs:
         docker-compose up
 
     - name: Check files
-      run: ls ./package
+      env:
+        package: readlink -f $(ls ./package)
+      run: echo $package
 
     - name: Upload DEB package
       uses: actions/upload-artifact@v2
