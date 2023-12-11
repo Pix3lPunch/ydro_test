@@ -1,3 +1,4 @@
 # ydr
 
-sudo docker run -it -v ./src:/build/src -v ./package:/package <container_name>
+Переменные среды в /build/.env
+Запуск sudo docker-compose up
