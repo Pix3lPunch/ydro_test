@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-    - name: Install Docker
-      run: docker --version
+    - name: Checkout repository
+      uses: actions/checkout@v2
