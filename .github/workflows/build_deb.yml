@@ -18,13 +18,13 @@ jobs:
 
     - name: Check files
       env:
-        package: readlink -f $(ls ./package)
+        package: $(readlink -f $(ls ./package))
       run: echo $package
 
     - name: Upload DEB package
       uses: actions/upload-artifact@v2
       env:
-        package: readlink -f $(ls ./package)
+        package: $(readlink -f $(ls ./package))
       with:
         name: deb-package
         path: $package
