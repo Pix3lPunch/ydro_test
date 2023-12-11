@@ -13,3 +13,6 @@ jobs:
 
     - name: Start build with docker-compose
       run: docker-compose up -f ./builder/docker-compose.yml
+
+    - name: Check files
+      run: ls
