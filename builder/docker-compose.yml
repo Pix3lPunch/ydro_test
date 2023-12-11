@@ -1,9 +1,10 @@
 version: "3"
 services:
-  ubuntu:
+  deb_builder:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ../src:/build/src
-      - ../package:/package
+      - ${SRC_DIR}:/build/src
+      - ${PACKAGE_DIR}:/package
+      - ${MISC}:/misc

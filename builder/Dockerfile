@@ -7,5 +7,6 @@ RUN mkdir -p /build/src
 RUN mkdir -p /package
 WORKDIR /build
 COPY /scripts/build_deb.sh /build/build_deb.sh
+COPY .env /build/.env
 RUN chmod +x /build/build_deb.sh
 ENTRYPOINT ./build_deb.sh
