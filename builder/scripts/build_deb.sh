@@ -27,7 +27,9 @@ dh_make -s -n -c "$PACKAGE_LICENSE" -p "${PACKAGE_NAME}_${PACKAGE_VERSION}" -e "
 # Fill debian/control
 sed -i "s/Description: .*/Description: $PACKAGE_DESCRIPTION/g" "$MODULE_SRC/debian/control"
 sed -i "s/Section: .*/Section: python/g" "$MODULE_SRC/debian/control"
-sed -i "/^Depends:/ s/$/, $DEPENDENCIES/" "$MODULE_SRC/debian/control"
+if [ -n "$DEPENDENCIES" ]; then
+    sed -i "/^Depends:/ s/$/, $DEPENDENCIES/" "$MODULE_SRC/debian/control"
+fi
 sed -i "s/Build-Depends: .*/Build-Depends: $BUILD_DEPENDENCIES/g" "$MODULE_SRC/debian/control"
 sed -i "/Standards-Version:/a\XS-Version: $PYTHON_VER" "$MODULE_SRC/debian/control"
 
